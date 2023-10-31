@@ -1,0 +1,32 @@
+<div mat-dialog-title>
+    <h1>Proveedor</h1>
+</div>
+<form [formGroup]="provForm" (ngSubmit)="onFormSubmit()">
+    <div mat-dialog-content>
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Nombre</mat-label>
+                <input matInput type="text" placeholder="Nombre del Proveedor" formControlName="nombre">
+            </mat-form-field>
+        </div>
+
+        <div class="row"></div>
+        <mat-form-field>
+            <mat-label>Razon Social</mat-label>
+            <input matInput type="text" placeholder="Razón Social" formControlName="razonSocial">
+        </mat-form-field>
+
+        <div class="row">
+            <mat-form-field>
+                <mat-label>Dirección</mat-label>
+                <textarea matInput rows="4" cols="40" type="text" placeholder="Dirección" formControlName="direccion"></textarea>
+            </mat-form-field>
+        </div>
+    </div>
+
+
+    <div mat-dialog-actions>
+        <button mat-raised-button (click)="onClear()">Cancelar</button>
+        <button mat-raised-button color="primary" type="submit">Guardar</button>
+    </div>
+</form>

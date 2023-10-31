@@ -1,0 +1,61 @@
+<mat-toolbar color="primary">
+    <span ><img src="/assets/images/logoBlanco.png"></span>
+    <span class="titleText">Administración de Proveedores</span>
+    <span class="example-spacer"></span>
+    <button mat-raised-button (click)="openAddEditEmpForm()">
+      Agregar Proveedor
+    </button>
+  </mat-toolbar>
+  <div class="mainBody">
+    <mat-form-field>
+      <mat-label>Filtrar por cualquier atributo</mat-label>
+      <input matInput (keyup)="applyFilter($event)" placeholder="Escriba aqui" #input>
+    </mat-form-field>
+  
+    <div class="mat-elevation-z8">
+      <table mat-table [dataSource]="dataSource" matSort>
+  
+        <!-- nombre Column -->
+        <ng-container matColumnDef="nombre">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Nombre </th>
+          <td mat-cell *matCellDef="let row"> {{row.nombre}} </td>
+        </ng-container>
+  
+        <!-- razonSocial Column -->
+        <ng-container matColumnDef="razonSocial">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Razón Social </th>
+          <td mat-cell *matCellDef="let row"> {{row.razonSocial}} </td>
+        </ng-container>
+  
+        <!-- direccion Column -->
+        <ng-container matColumnDef="direccion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Dirección </th>
+          <td mat-cell *matCellDef="let row"> {{row.direccion}} </td>
+        </ng-container>
+  
+        <ng-container matColumnDef="accion">
+          <th mat-header-cell *matHeaderCellDef mat-sort-header> Acción </th>
+          <td mat-cell *matCellDef="let row"> 
+            <!--button mat-icon-button color="primary"> 
+              <mat-icon>edit</mat-icon>
+            </button-->
+            <button mat-icon-button color="warn" (click)="deleteProvider(row.nombre)"> 
+              <mat-icon>delete</mat-icon>
+            </button>
+          </td>
+        </ng-container>
+  
+  
+  
+        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+  
+        <!-- Row shown when there is no matching data. -->
+        <tr class="mat-row" *matNoDataRow>
+          <td class="mat-cell" colspan="4">No hay resultados para la busqueda "{{input.value}}"</td>
+        </tr>
+      </table>
+  
+      <mat-paginator [pageSizeOptions]="[5, 10, 25, 100]" aria-label="Select page of users"></mat-paginator>
+    </div>
+  </div>>
