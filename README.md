@@ -18,7 +18,7 @@ Routing en el backend para resolver las rutas de los webservices
 Para descargar el proyecto ejecutar el comando: git clone https://github.com/kaliman1997/gapsi_ecommerce
 
 Cambiarse a la carpeta gapsi_ecommerce.
-Para instalar las dependencias ejecutar el comando: npm init
+Para instalar las dependencias ejecutar el comando: npm install
 
 Para iniciar la aplicacion ejecutar el comando: node ./index.js
 
