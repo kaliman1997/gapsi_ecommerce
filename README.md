@@ -13,7 +13,7 @@ El proyecto utiliza los siguientes patrones de diseño:
 Dependency Injection en Angular.. los modulos solo son injectados en los componentes.
 Routing en el backend para resolver las rutas de los webservices
 
-##Descarga, instalación y ejecución
+## Descarga, instalación y ejecución
 
 Para descargar el proyecto ejecutar el comando: git clone https://github.com/kaliman1997/gapsi_ecommerce
 
